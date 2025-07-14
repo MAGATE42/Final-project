@@ -21,3 +21,25 @@ INSERT INTO emprunt (id_objet, id_membre, date_emprunt, date_retour) VALUES
 (29, 1, '2025-07-08', '2025-07-24'),
 (33, 2, '2025-07-09', '2025-07-25'),
 (38, 1, '2025-07-10', '2025-07-26');
+
+INSERT INTO images_objet (id_objet, nom_image) VALUES
+(1, 'obj1_img1.jpg'),
+(1, 'obj1_img2.jpg'),
+(2, 'obj2_img1.jpg'),
+(2, 'obj2_img2.jpg'),
+(3, 'obj3_img1.jpg'),
+(3, 'obj3_img2.jpg'),
+(4, 'obj4_img1.jpg'),
+(4, 'obj4_img2.jpg'),
+(5, 'obj5_img1.jpg'),
+(5, 'obj5_img2.jpg'),
+(6, 'obj6_img1.jpg'),
+(6, 'obj6_img2.jpg'),
+(7, 'obj7_img1.jpg'),
+(7, 'obj7_img2.jpg'),
+(8, 'obj8_img1.jpg'),
+(8, 'obj8_img2.jpg'),
+(9, 'obj9_img1.jpg'),
+(9, 'obj9_img2.jpg'),
+(10, 'obj10_img1.jpg'),
+(10, 'obj10_img2.jpg');
