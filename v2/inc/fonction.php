@@ -70,4 +70,28 @@ function supprimerImageObjet($connexion, $id_image) {
     $sql = "DELETE FROM images_objet WHERE id_image = $id_image";
     mysqli_query($connexion, $sql);
 }
+
+function getFicheObjet($connexion, $id_objet) {
+    $sql = "SELECT o.*, c.nom_categorie, m.nom AS nom_membre FROM objet o
+            JOIN categorie_objet c ON o.id_categorie = c.id_categorie
+            JOIN membre m ON o.id_membre = m.id_membre
+            WHERE o.id_objet = $id_objet";
+    $resultat = mysqli_query($connexion, $sql);
+    return mysqli_fetch_assoc($resultat);
+}
+
+function getHistoriqueEmprunts($connexion, $id_objet) {
+    $sql = "SELECT e.*, m.nom FROM emprunt e
+            JOIN membre m ON e.id_membre = m.id_membre
+            WHERE id_objet = $id_objet
+            ORDER BY date_emprunt DESC";
+    $resultat = mysqli_query($connexion, $sql);
+    $historique = array();
+
+    while ($ligne = mysqli_fetch_assoc($resultat)) {
+        $historique[] = $ligne;
+    }
+
+    return $historique;
+}
 ?>
