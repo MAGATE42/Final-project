@@ -43,5 +43,5 @@ $historique = getHistoriqueEmprunts($connexion, $id_objet);
                 </tr>
             <?php } ?>
         </tbody>
-    </table>
+            </table>
 </div>
