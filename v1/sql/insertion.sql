@@ -23,23 +23,13 @@ INSERT INTO emprunt (id_objet, id_membre, date_emprunt, date_retour) VALUES
 (38, 1, '2025-07-10', '2025-07-26');
 
 INSERT INTO images_objet (id_objet, nom_image) VALUES
-(1, 'obj1_img1.jpg'),
-(1, 'obj1_img2.jpg'),
-(2, 'obj2_img1.jpg'),
-(2, 'obj2_img2.jpg'),
-(3, 'obj3_img1.jpg'),
-(3, 'obj3_img2.jpg'),
-(4, 'obj4_img1.jpg'),
-(4, 'obj4_img2.jpg'),
-(5, 'obj5_img1.jpg'),
-(5, 'obj5_img2.jpg'),
-(6, 'obj6_img1.jpg'),
-(6, 'obj6_img2.jpg'),
-(7, 'obj7_img1.jpg'),
-(7, 'obj7_img2.jpg'),
-(8, 'obj8_img1.jpg'),
-(8, 'obj8_img2.jpg'),
-(9, 'obj9_img1.jpg'),
-(9, 'obj9_img2.jpg'),
-(10, 'obj10_img1.jpg'),
-(10, 'obj10_img2.jpg');
+(1, 'obj1.jpg'), (11, 'obj1.jpg'), (21, 'obj1.jpg'), (31, 'obj1.jpg'),
+(2, 'obj2.jpg'), (12, 'obj2.jpg'), (22, 'obj2.jpg'), (32, 'obj2.jpg'),
+(3, 'obj3.jpg'), (13, 'obj3.jpg'), (23, 'obj3.jpg'), (33, 'obj3.jpg'),
+(4, 'obj4.jpg'), (14, 'obj4.jpg'), (24, 'obj4.jpg'), (34, 'obj4.jpg'),
+(5, 'obj5.jpg'), (15, 'obj5.jpg'), (25, 'obj5.jpg'), (35, 'obj5.jpg'),
+(6, 'obj6.jpg'), (16, 'obj6.jpg'), (26, 'obj6.jpg'), (36, 'obj6.jpg'),
+(7, 'obj7.jpg'), (17, 'obj7.jpg'), (27, 'obj7.jpg'), (37, 'obj7.jpg'),
+(8, 'obj8.jpg'), (18, 'obj8.jpg'), (28, 'obj8.jpg'), (38, 'obj8.jpg'),
+(9, 'obj9.jpg'), (19, 'obj9.jpg'), (29, 'obj9.jpg'), (39, 'obj9.jpg'),
+(10, 'obj10.jpg'), (20, 'obj10.jpg'), (30, 'obj10.jpg'), (40, 'obj10.jpg');
