@@ -39,4 +39,10 @@ function verifierUtilisateur($connexion, $email, $mdp) {
         return null;
     }
 }
+
+function ajouterMembre($connexion, $nom, $naissance, $genre, $email, $ville, $mdp, $image) {
+    $sql = "INSERT INTO membre(nom, date_naissance, genre, email, ville, mdp, image_profil) 
+            VALUES ('$nom', '$naissance', '$genre', '$email', '$ville', '$mdp', '$image')";
+    mysqli_query($connexion, $sql);
+}
 ?>
