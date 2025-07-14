@@ -111,4 +111,17 @@ function getObjetsParMembreParCategorie($connexion, $id_membre) {
     }
     return $groupes;
 }
+
+function ajouterObjet($connexion, $nom_objet, $id_categorie, $id_membre) {
+    $sql = "INSERT INTO objet(nom_objet, id_categorie, id_membre) 
+            VALUES ('$nom_objet', $id_categorie, $id_membre)";
+    mysqli_query($connexion, $sql);
+    return mysqli_insert_id($connexion);
+}
+
+function ajouterImageObjet($connexion, $id_objet, $nom_image) {
+    $sql = "INSERT INTO images_objet(id_objet, nom_image) 
+            VALUES ($id_objet, '$nom_image')";
+    mysqli_query($connexion, $sql);
+}
 ?>
