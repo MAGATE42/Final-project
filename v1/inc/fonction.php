@@ -45,4 +45,13 @@ function ajouterMembre($connexion, $nom, $naissance, $genre, $email, $ville, $md
             VALUES ('$nom', '$naissance', '$genre', '$email', '$ville', '$mdp', '$image')";
     mysqli_query($connexion, $sql);
 }
+
+function getImageObjet($connexion, $id_objet) {
+    $sql = "SELECT nom_image FROM images_objet WHERE id_objet = $id_objet LIMIT 1";
+    $resultat = mysqli_query($connexion, $sql);
+
+    if ($ligne = mysqli_fetch_assoc($resultat)) {
+        return $ligne["nom_image"];
+    }
+}
 ?>
