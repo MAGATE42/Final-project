@@ -94,4 +94,21 @@ function getHistoriqueEmprunts($connexion, $id_objet) {
 
     return $historique;
 }
+
+function getObjetsParMembreParCategorie($connexion, $id_membre) {
+    $sql = "SELECT o.*, c.nom_categorie FROM objet o
+            JOIN categorie_objet c ON o.id_categorie = c.id_categorie
+            WHERE o.id_membre = $id_membre
+            ORDER BY c.nom_categorie";
+    $resultat = mysqli_query($connexion, $sql);
+    $groupes = [];
+    while ($ligne = mysqli_fetch_assoc($resultat)) {
+        $cat = $ligne['nom_categorie'];
+        if (!isset($groupes[$cat])) {
+            $groupes[$cat] = [];
+        }
+        $groupes[$cat][] = $ligne;
+    }
+    return $groupes;
+}
 ?>
