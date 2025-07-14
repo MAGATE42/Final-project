@@ -42,3 +42,33 @@ $objets = getObjets($connexion, $categorie_id);
         </div>
     </div>
     </form>
+    <div class="row">
+    <?php
+    foreach ($objets as $o) {
+        $image = getImageObjet($connexion, $o["id_objet"]);
+    ?>
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <img src="assets/img/<?= $image ?>" class="card-img-top" alt="Image objet" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $o["nom_objet"] ?></h5>
+                    <?php
+                    if ($o["date_retour"] != null) {
+                    ?>
+                        <p class="text-danger"><strong>Emprunté jusqu’au :</strong> <?= $o["date_retour"] ?></p>
+                    <?php
+                    } else {
+                    ?>
+                        <p class="text-success"><strong>Disponible</strong></p>
+                    <?php
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+    <?php
+    }
+    ?>
+    </div>
+
+</div>
