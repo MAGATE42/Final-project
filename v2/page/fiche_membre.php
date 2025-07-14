@@ -27,3 +27,30 @@ $objetsParCategorie = getObjetsParMembreParCategorie($connexion, $id_membre);
             <p><strong>Ville :</strong> <?= $membre["ville"] ?></p>
         </div>
     </div>
+
+    <h4>Objets ajoutés</h4>
+
+<?php if (empty($objetsParCategorie)) { ?>
+    <p>Aucun objet enregistré.</p>
+<?php } else { ?>
+    <?php foreach ($objetsParCategorie as $categorie => $objets) { ?>
+        <h5 class="mt-3"><?= $categorie ?></h5>
+        <div class="row">
+                <?php foreach ($objets as $objet) {
+             $image = getImageObjet($connexion, $objet["id_objet"]);
+                ?>
+                    <div class="col-md-3 mb-3">
+                    <div class="card">
+                   <a href="model.php?p=fiche_objet&id=<?= $objet["id_objet"] ?>">
+                <img src="assets/img/<?= $image ?>" class="card-img-top" style="height:180px; object-fit:cover;">
+                        </a>
+                <div class="card-body">
+                                <h6 class="card-title"><?= $objet["nom_objet"] ?></h6>
+                       </div>
+                        </div>   
+                                 </div>
+            <?php } ?>
+        </div>
+    <?php } ?>
+<?php } ?>
+</div>
