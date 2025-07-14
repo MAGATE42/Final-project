@@ -29,4 +29,14 @@ function getObjets($connexion, $categorie_id = null) {
 
     return $objets;
 }
+function verifierUtilisateur($connexion, $email, $mdp) {
+    $sql = "SELECT * FROM membre WHERE email = '$email' AND mdp = '$mdp'";
+    $resultat = mysqli_query($connexion, $sql);
+
+    if ($ligne = mysqli_fetch_assoc($resultat)) {
+        return $ligne;
+    } else {
+        return null;
+    }
+}
 ?>
